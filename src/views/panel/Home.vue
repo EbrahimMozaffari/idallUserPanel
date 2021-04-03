@@ -154,7 +154,7 @@
             <hr class="mx-4" />
             <v-card-actions>
               <p class="blue--text iranSansLight pr-4">
-               گزارش هاس آماری و تغییر سطح دسترسی به سرویس ها
+               گزارش های آماری و تغییر سطح دسترسی به سرویس ها
               </p>
             </v-card-actions>
           </v-card>

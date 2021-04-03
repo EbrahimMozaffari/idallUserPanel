@@ -11,5 +11,10 @@ module.exports = {
     '@coreui/utils',
     '@coreui/vue',
     'vuetify'
-  ]
+  ],
+ publicPath: process.env.NODE_ENV === 'production'
+      ? '/idallUserPanel/'
+      : '/'
+  
 }
+
