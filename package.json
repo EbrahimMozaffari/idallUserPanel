@@ -31,7 +31,6 @@
     "moment-jalaali": "^0.9.2",
     "save": "^2.4.0",
     "vue": "~2.6.12",
-    "vue-axios": "^3.2.4",
     "vue-meta": "^2.4.0",
     "vue-persian-datetime-picker": "^2.6.0",
     "vue-router": "^3.5.1",
