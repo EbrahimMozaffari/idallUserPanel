@@ -2,19 +2,29 @@ export default [
   {
     _name: 'CSidebarNav',
     _children: [
+      // {
+      //   _name: 'CSidebarNavItem',
+      //   name: 'Dashboard',
+      //   to: '/dashboard',
+      //   icon: 'cil-speedometer',
+      //   badge: {
+      //     color: 'primary',
+      //     text: 'NEW'
+      //   }
+      // },
       {
         _name: 'CSidebarNavItem',
-        name: 'Dashboard',
-        to: '/dashboard',
+        name: 'خانه',
+        to: '/home',
         icon: 'cil-speedometer',
-        badge: {
-          color: 'primary',
-          text: 'NEW'
-        }
+        // badge: {
+        //   color: 'primary',
+        //   text: 'NEW'
+        // }
       },
       {
         _name: 'CSidebarNavItem',
-        name: 'اطلاعات اولیه',
+        name: 'مشخصات فردی',
         to: '/PersonInfo',
         icon: 'cil-pencil',
         // badge: {

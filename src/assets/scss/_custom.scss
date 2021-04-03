@@ -10,12 +10,13 @@ $font_path: '~@/assets/fonts/';
     src: url($font_path+'IRANSansWeb-FaNum-Light.ttf') format("truetype"),
 
   }
-  .c-sidebar-nav-link,.v-breadcrumbs,.v-tab,.v-data-table-header,.v-data-footer{
+  .iranSansBold,.c-sidebar-nav-link,.v-breadcrumbs,.v-tab,.v-data-table-header,.v-data-footer{
       font-family: IRANSansWeb-FaNum-Bold;
   }
-  .v-label,.v-btn__content,.v-input__slot input,.v-data-table__wrapper tbody td{
+  .iranSansLight,.v-label,.v-btn__content,.v-input__slot input,.v-data-table__wrapper tbody td{
       font-family: IRANSansWeb-FaNum-Light;
   }
+
 //   @font-face {
 //       font-family: IRANSansWeb-FaNum-Light;
 //       src: url(../fonts/IRANSansWeb-FaNum-Light.ttf) format("truetype"), url(fonts/IRANSansWeb_FaNum-Light.woff2) format("woff2"), url(fonts/IRANSansWeb_FaNum-Light.woff) format("woff")

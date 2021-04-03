@@ -64,6 +64,8 @@ const Documents = () => import("@/views/panel/Documents");
 const ActiveLogins = () => import("@/views/panel/ActiveLogins");
 const LoginHistory = () => import("@/views/panel/LoginHistory");
 
+const Home = () => import("@/views/panel/Home");
+
 Vue.use(Router);
 
 export default new Router({
@@ -82,7 +84,7 @@ function configRoutes() {
     // },
     {
       path: "/",
-      redirect: "/dashboard",
+      redirect: "/home",
       name: "Home",
       component: TheContainer,
       children: [
@@ -90,6 +92,11 @@ function configRoutes() {
           path: "dashboard",
           name: "Dashboard",
           component: Dashboard,
+        },
+        {
+          path: "home",
+          name: "Home",
+          component: Home,
         },
         {
           path: "personInfo",

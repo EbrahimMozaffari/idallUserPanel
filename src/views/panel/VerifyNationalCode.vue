@@ -71,7 +71,7 @@ export default {
   data: () => ({
     breadcrumbs: [
       {
-        text: "داشبورد",
+        text: "خانه",
         disabled: false,
         to: { name: "Home" },
         exact: true,

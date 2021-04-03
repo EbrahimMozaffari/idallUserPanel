@@ -3,7 +3,6 @@
     <v-container>
       <v-row justify="center">
         <v-col cols="12">
-          
           <v-card ref="form">
             <v-form
               v-if="user"
@@ -36,7 +35,7 @@
                     persistent-hint
                     outlined
                     v-model="user.basicInfo.nationalCode"
-                     :rules="nationalCodeRule()"
+                    :rules="nationalCodeRule()"
                     label="کد ملی"
                     required
                   ></v-text-field>
@@ -92,15 +91,18 @@
                   ></v-text-field>
                 </v-col>
               </v-row>
-
-              <v-btn
-                :disabled="!valid"
-                color="success"
-                class="mr-4"
-                @click="validate"
-              >
-                ویرایش
-              </v-btn>
+              <v-row>
+                <v-col cols="12" md="1" sm="12">
+                  <v-btn
+                    block
+                    :disabled="!valid"
+                    color="success"
+                    @click="validate"
+                  >
+                    ویرایش
+                  </v-btn>
+                </v-col>
+                </v-row>
             </v-form>
           </v-card>
         </v-col>
@@ -118,13 +120,13 @@ export default {
   data: () => ({
     breadcrumbs: [
       {
-        text: "داشبورد",
+        text: "خانه",
         disabled: false,
         to: { name: "Home" },
         exact: true,
       },
       {
-        text: "اطلاعات اولیه ",
+        text: "مشخصات فردی  ",
         disabled: true,
         exact: true,
       },
@@ -157,7 +159,7 @@ export default {
       let finalDate = moment(dateFormatted, "YYYY-M-D")
         .endOf("jMonth")
         .format("jYYYY/jM/jD");
-        
+
       return finalDate;
     },
   },
