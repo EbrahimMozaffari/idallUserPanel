@@ -13,7 +13,7 @@ module.exports = {
     'vuetify'
   ],
  publicPath: process.env.NODE_ENV === 'production'
-      ? '/idallUserPanel1/'
+      ? '/idallUserPanel/'
       : '/'
   
 }
