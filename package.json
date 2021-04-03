@@ -16,7 +16,8 @@
     "lint": "vue-cli-service lint",
     "auto-changelog": "auto-changelog  --hide-credit --commit-limit false --package --backfill-limit 0 --starting-version 3.0.0-beta.0",
     "clearCache": "jest --clearCache",
-    "release": "npm-run-all clearCache lint build test:unit test:e2e"
+    "release": "npm-run-all clearCache lint build test:unit test:e2e",
+    "deploy": "sh deploy.sh"
   },
   "dependencies": {
     "@coreui/coreui": "^3.4.0",
