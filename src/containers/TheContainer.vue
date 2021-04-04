@@ -1,6 +1,8 @@
 <template>
   <div class="c-app">
+       
     <TheSidebar/>
+   
     <CWrapper>
       <TheHeader/>
       <div class="c-body">
@@ -13,8 +15,11 @@
         </main>
       </div>
       <TheFooter/>
+      
     </CWrapper>
+     
   </div>
+  
 </template>
 
 <script>
@@ -28,7 +33,8 @@ export default {
     TheSidebar,
     TheHeader,
     TheFooter
-  }
+  },
+ 
 }
 </script>
 

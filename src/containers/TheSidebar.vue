@@ -5,6 +5,13 @@
     :show="show"
     @update:show="(value) => $store.dispatch('app/set', ['sidebarShow', value])"
   >
+  <v-overlay :value="overlay">
+      <v-progress-circular
+        indeterminate
+        size="64"
+      ></v-progress-circular>
+    </v-overlay>
+
     <CSidebarBrand class="d-md-down-none" to="/">
       <CIcon
         class="c-sidebar-brand-full"
@@ -43,6 +50,20 @@ export default {
     minimize() {
       return this.$store.state.app.sidebarMinimize;
     },
+    overlay(){
+      return this.$store.state.app.overlay;
+    }
   },
+  //  data: () => ({
+  //     overlay: false,
+  //   }),
+
+  //   watch: {
+  //     overlay (val) {
+  //       val && setTimeout(() => {
+  //         this.overlay = false
+  //       }, 3000)
+  //     },
+  //   },
 };
 </script>

@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
+import store from "../store/index";
 
 // Containers
 const TheContainer = () => import("@/containers/TheContainer");
@@ -68,12 +69,24 @@ const Home = () => import("@/views/panel/Home");
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   mode: "hash", // https://router.vuejs.org/api/#mode
   linkActiveClass: "active",
   scrollBehavior: () => ({ y: 0 }),
   routes: configRoutes(),
 });
+router.beforeEach((to, from, next) => {
+  console.log("before");
+  store.dispatch("app/setOverlay", true);
+  next();
+});
+
+router.afterEach((to, from) => {
+  setTimeout(() => {
+    store.dispatch("app/setOverlay", false);
+  }, 3000);
+});
+export default router;
 
 function configRoutes() {
   return [

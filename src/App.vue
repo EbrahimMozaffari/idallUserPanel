@@ -1,12 +1,16 @@
 <template>
-<v-app :key="$route.fullPath"><router-view></router-view></v-app>
+
+ <v-app :key="$route.fullPath">
+
+  <router-view></router-view></v-app>
 
   
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+ 
 }
 </script>
 

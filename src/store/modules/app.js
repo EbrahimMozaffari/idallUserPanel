@@ -3,7 +3,8 @@ export const namespaced = true;
 export const state = {
   sidebarShow: "responsive",
   sidebarMinimize: false,
-  breadCrumItem:[]
+  breadCrumItem:[],
+  overlay:false,
 };
 
 export const mutations = {
@@ -21,6 +22,9 @@ export const mutations = {
   },
   SET_BREAD_CRUMBS(state,payload){
     state.breadCrumItem = payload;
+  },
+  SET_OVERLAY(state,payload){
+    state.overlay = payload;
   }
 };
 
@@ -36,5 +40,11 @@ export const actions = {
   },
   setBreadCrumbs({ commit }, payload) {
     commit("SET_BREAD_CRUMBS",payload);
+  },
+  setOverlay({ commit,state }, payload) {
+    console.log('overlay',payload)
+    commit("SET_OVERLAY",payload);
+
+    
   },
 };
