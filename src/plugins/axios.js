@@ -11,20 +11,21 @@ axios.interceptors.request.use((config)=>{
 axios.interceptors.response.use(
   (response) => {
     store.dispatch("app/setOverlay",false);
+    
     return response;
+  
   },
   (error) => {
 console.log(error,"error")
-    if (error.response.status === 404) {
-      router.push({ name: "Page404" });
-    } else if (error.response.status === 403) {
-      router.push({ name: "Page404" });
-    }
+store.dispatch("app/setOverlay",false);
+      if (error.response.status === 404) {
+        router.push({ name: "Page404" });
+      } else if (error.response.status === 403) {
+        router.push({ name: "Page404" });
+      }
+     
     return Promise.reject(error);
   },
-  ()=>{
-  store.dispatch("app/setOverlay",false);
-  }
 );
 
 export default axios;

@@ -6,7 +6,7 @@
           <v-card ref="form">
             <v-row align="center" class="spacer px-4">
               <v-col cols="3" sm="3" md="1">
-                <v-avatar size="80px" v-if="true">
+                <v-avatar size="80px" v-if="true" class="grey lighten-2">
                   <v-hover v-slot="{ hover }">
                     <v-img
                       @click="dialog = !dialog"
@@ -254,7 +254,6 @@ export default {
   },
 
   mounted() {
-    // this.$store.dispatch("app/setOverlay",true);
     this.$store.dispatch("user/fetchUser");
     this.$store.dispatch("app/setBreadCrumbs", this.breadcrumbs);
   },
