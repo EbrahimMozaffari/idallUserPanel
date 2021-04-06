@@ -4,8 +4,8 @@
       <v-row justify="center"  v-if="user">
         <v-col cols="12">
           <v-card ref="form">
-            <v-row align="center" class="spacer px-4">
-              <v-col cols="3" sm="3" md="1">
+            <v-row   align="center" class="spacer px-4 ">
+              <v-col cols="12" xs="12" sm="12" md="1"  class="d-flex justify-center justify-md-start">
                 <v-avatar size="80px" v-if="true" class="grey lighten-2">
                   <v-hover v-slot="{ hover }">
                     <v-img
@@ -32,7 +32,7 @@
                   <span class="white--text headline">EM</span>
                 </v-avatar>
               </v-col>
-              <v-col cols="9" sm="9" md="11">
+              <v-col cols="12" xs="12" sm="12" md="11" class="pr-lg-7 d-flex justify-center justify-md-start"  >
                 <p class="iranSansLight">برای ویرایش بر روی عکس کلیک نمائید</p>
               </v-col>
             </v-row>

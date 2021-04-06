@@ -2,7 +2,7 @@
   <div>
     <v-container>
       <v-row align="center" class="spacer">
-        <v-col cols="3" sm="3" md="1">
+        <v-col cols="12" xs="12" sm="12" md="1"  class="d-flex justify-center justify-md-start">
           <v-avatar size="70px" v-if="true">
             <img
               alt="Avatar"
@@ -13,7 +13,7 @@
             <span class="white--text headline">EM</span>
           </v-avatar>
         </v-col>
-        <v-col cols="9" sm="9" md="11">
+        <v-col cols="12" xs="12" sm="12" md="11" class="pr-lg-7 pr-md-7 ">
           <p class="iranSansBold">سلام علی جان</p>
           <p class="iranSansLight">
             از این قسمت میتونی اطلاعات فردی، امنیت و گزارش های سرویس هایی که از
