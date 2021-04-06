@@ -3,13 +3,13 @@
     <v-container>
       <v-row align="center" class="spacer">
         <v-col cols="12" xs="12" sm="12" md="1"  class="d-flex justify-center justify-md-start">
-          <v-avatar size="70px" v-if="true">
+          <v-avatar size="80px" v-if="true">
             <img
               alt="Avatar"
               src="https://avatars0.githubusercontent.com/u/9064066?v=4&s=460"
             />
           </v-avatar>
-          <v-avatar size="70px" v-else class="red">
+          <v-avatar size="80px" v-else class="red">
             <span class="white--text headline">EM</span>
           </v-avatar>
         </v-col>
