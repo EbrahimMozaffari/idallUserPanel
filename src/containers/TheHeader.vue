@@ -1,8 +1,5 @@
 <template>
-
-  
   <CHeader fixed with-subheader light>
-
     <CToggler
       in-header
       class="ml-3 d-lg-none"
@@ -29,11 +26,17 @@
       </CHeaderNavItem> -->
     </CHeaderNav>
     <CHeaderNav class="mr-4">
-      <!-- <CHeaderNavItem class="d-md-down-none mx-2">
-        <CHeaderNavLink>
-          <CIcon name="cil-bell" />
+      <CHeaderNavItem class="d-md-down-none mx-2">
+        <CHeaderNavLink class="pl-0">
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on, attrs }">
+              <v-icon @click="$oidc.signOut()" v-bind="attrs" v-on="on" color="red" >mdi-exit-to-app</v-icon
+              >
+            </template>
+            <span class="iranSansLight">خروج از آیدال</span>
+          </v-tooltip>
         </CHeaderNavLink>
-      </CHeaderNavItem> -->
+      </CHeaderNavItem>
       <!-- <CHeaderNavItem class="d-md-down-none mx-2">
         <CHeaderNavLink>
           <CIcon name="cil-list" />
@@ -49,7 +52,6 @@
     <CSubheader class="px-3">
       <!-- <CBreadcrumbRouter class="border-0 mb-0" /> -->
       <v-breadcrumbs :items="$store.state.app.breadCrumItem"></v-breadcrumbs>
-                    
     </CSubheader>
   </CHeader>
 </template>
@@ -59,7 +61,7 @@
 
 export default {
   name: "TheHeader",
-   
+
   components: {
     //TheHeaderDropdownAccnt,
   },

@@ -10,8 +10,8 @@ const TheContainer = () => import("@/containers/TheContainer");
 
 
 // Views - Pages
-const Page404 = () => import("@/views/pages/Page404");
-const Page500 = () => import("@/views/pages/Page500");
+const Page404 = () => import("@/views/error/Page404");
+const Page500 = () => import("@/views/error/Page500");
  const Login = () => import("@/views/login/Login");
 // const Register = () => import("@/views/pages/Register");
 
@@ -136,9 +136,9 @@ function configRoutes() {
       ],
     },
     {
-      path: "/pages",
-      redirect: "/pages/404",
-      name: "Pages",
+      path: "/error",
+      redirect: "/error/404",
+      name: "Error",
       component: {
         render(c) {
           return c("router-view");
@@ -155,12 +155,6 @@ function configRoutes() {
           name: "Page500",
           component: Page500,
         },
-       
-        // {
-        //   path: "register",
-        //   name: "Register",
-        //   component: Register,
-        // },
       ],
     },
   ];

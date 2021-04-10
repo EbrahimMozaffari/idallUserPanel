@@ -6,7 +6,8 @@
           <CCardGroup>
             <CCard class="p-4">
               <CCardBody>
-               <v-btn class="success" @click="$oidc.signIn()">signIn</v-btn >
+                
+               <v-btn class="success iranSansBold mx-auto" @click="$oidc.signIn()">اتصال به آیدال</v-btn >
                <router-link to="/home"></router-link>
               </CCardBody>
             </CCard>
@@ -17,15 +18,9 @@
               body-wrapper
             >
               <CCardBody>
-                <h2>Sign up</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <CButton
-                  color="light"
-                  variant="outline"
-                  size="lg"
-                >
-                  Register Now!
-                </CButton>
+                <h2 class="iranSansBold">لورم ایپسوم</h2>
+                <p class="iranSansLight">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
+                  با استفاده از طراحان گرافیک است، چاپگرها</p>
               </CCardBody>
             </CCard>
           </CCardGroup>
