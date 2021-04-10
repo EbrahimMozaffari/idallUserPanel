@@ -5,42 +5,42 @@ export default [
       {
         _name: 'CSidebarNavItem',
         name: 'خانه',
-        to: '/home',
+        to: '/panel/dashboard',
         icon: 'cil-speedometer',
 
       },
       {
         _name: 'CSidebarNavItem',
         name: 'مشخصات فردی',
-        to: '/PersonInfo',
+        to: '/panel/PersonInfo',
         icon: 'cil-pencil',
 
       },
       {
         _name: 'CSidebarNavItem',
         name: 'تائید کد ملی',
-        to: '/VerifyNationalCode',
+        to: '/panel/VerifyNationalCode',
         icon: 'cil-check',
 
       },
       {
         _name: 'CSidebarNavItem',
         name: 'مخزن مدارک',
-        to: '/Documents',
+        to: '/panel/Documents',
         icon: { name: 'cil-layers'},
 
       },
       {
         _name: 'CSidebarNavItem',
         name: 'ورودی های فعال',
-        to: '/ActiveLogins',
+        to: '/panel/ActiveLogins',
         icon: 'cil-puzzle',
 
       },
       {
         _name: 'CSidebarNavItem',
         name: 'تاریحچه ورود ها  ',
-        to: '/LoginHistory',
+        to: '/panel/LoginHistory',
         icon: 'cil-star',
 
       },

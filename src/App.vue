@@ -2,7 +2,8 @@
 
  <v-app :key="$route.fullPath">
 
-  <router-view></router-view></v-app>
+  <router-view></router-view>
+  </v-app>
 
   
 </template>

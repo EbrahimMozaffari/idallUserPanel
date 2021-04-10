@@ -44,10 +44,10 @@ export const actions = {
       };
       
       // Group by color as key to the person array
-      const personGroupedByColor = groupBy(data.users[0].documents, 'category');
+      const personGroupedByCategory = groupBy(data.users[0].documents, 'category');
 
-      console.log(personGroupedByColor);
-      commit("SET_SORTBYCATEGORY", personGroupedByColor);
+      //console.log(personGroupedByColor);
+      commit("SET_SORTBYCATEGORY", personGroupedByCategory);
       
 
     } catch (error) {
