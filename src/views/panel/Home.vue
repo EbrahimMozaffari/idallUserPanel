@@ -6,7 +6,7 @@
           <v-avatar size="80px" v-if="true">
             <img
               alt="Avatar"
-              src="https://avatars0.githubusercontent.com/u/9064066?v=4&s=460"
+              src="@/assets/images/avatar_default.png"
             />
           </v-avatar>
           <v-avatar size="80px" v-else class="red">
@@ -34,9 +34,6 @@
                   </p>
                   <p class="iranSansLight">و اطلاعات تماس</p>
                 </div>
-                <!-- <v-list-item-title class="headline mb-1 iranSansBold">
-                  Headline 5
-                </v-list-item-title> -->
                 <v-list-item-subtitle class="iranSansLight"
                   >لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
                   با استفاده از طراحان گرافیک است، چاپگرها</v-list-item-subtitle
@@ -68,9 +65,6 @@
                   </p>
                   <p class="iranSansLight">و امنیت اطلاعات </p>
                 </div>
-                <!-- <v-list-item-title class="headline mb-1 iranSansBold">
-                  Headline 5
-                </v-list-item-title> -->
                 <v-list-item-subtitle class="iranSansLight"
                   >لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
                   با استفاده از طراحان گرافیک است، چاپگرها</v-list-item-subtitle
@@ -102,9 +96,7 @@
                   </p>
                   <p class="iranSansLight">برای مشاهده و ورود بهتر </p>
                 </div>
-                <!-- <v-list-item-title class="headline mb-1 iranSansBold">
-                  Headline 5
-                </v-list-item-title> -->
+
                 <v-list-item-subtitle class="iranSansLight"
                   >لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
                   با استفاده از طراحان گرافیک است، چاپگرها</v-list-item-subtitle
@@ -136,9 +128,7 @@
                   </p>
                   <p class="iranSansLight">سطح دسترسی و گزارش ها </p>
                 </div>
-                <!-- <v-list-item-title class="headline mb-1 iranSansBold">
-                  Headline 5
-                </v-list-item-title> -->
+
                 <v-list-item-subtitle class="iranSansLight"
                   >لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
                   با استفاده از طراحان گرافیک است، چاپگرها</v-list-item-subtitle
@@ -166,8 +156,7 @@
 </template>
 
 <script>
-// import { requiredRule } from "../../rules/index";
-// import { nationalCodeRule } from "../../rules/index";
+
 export default {
   name: "Home",
   data: () => ({

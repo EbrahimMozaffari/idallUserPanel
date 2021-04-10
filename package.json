@@ -1,12 +1,12 @@
 {
-  "name": "@coreui/coreui-free-vue-admin-template",
-  "version": "3.1.4",
-  "description": "Open Source Bootstrap Admin Template",
+  "name": "idall-user-panel",
+  "version": "1.0.0",
+  "description": "idall userPanel",
   "author": {
-    "name": "CoreUI",
-    "url": "https://coreui.io",
-    "github": "https://github.com/coreui",
-    "twitter": "https://twitter.com/core_ui"
+    "name": "Tebyan Smart",
+    "url": "https://accounts.idall.pro",
+    "github": "https://github.com/TebyanSmart",
+    "twitter": "https://twitter.com/TebyanSmart"
   },
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -16,8 +16,7 @@
     "lint": "vue-cli-service lint",
     "auto-changelog": "auto-changelog  --hide-credit --commit-limit false --package --backfill-limit 0 --starting-version 3.0.0-beta.0",
     "clearCache": "jest --clearCache",
-    "release": "npm-run-all clearCache lint build test:unit test:e2e",
-    "deploy": "sh deploy.sh"
+    "release": "npm-run-all clearCache lint build test:unit test:e2e"
   },
   "dependencies": {
     "@coreui/coreui": "^3.4.0",
@@ -67,19 +66,19 @@
   ],
   "contributors": [
     {
-      "name": "CoreUI Team",
-      "url": "https://github.com/orgs/coreui/people"
+      "name": "TebyanSmart Team",
+      "url": "https://github.com/orgs/TebyanSmart"
     }
   ],
-  "copyright": "Copyright 2021 creativeLabs Łukasz Holeczek",
+  "copyright": "Copyright 2021 TebyanSmart",
   "engines": {
     "node": ">= 12.x",
     "npm": ">= 6.x"
   },
-  "homepage": "http://coreui.io",
+  "homepage": "http://TebyanSmart.ir",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:coreui/coreui-free-vue-admin-template.git"
+    "url": "git@github.com:TebyanSmart"
   }
 }

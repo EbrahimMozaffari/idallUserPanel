@@ -10,7 +10,7 @@
                   <v-hover v-slot="{ hover }">
                     <v-img
                       @click="dialog = !dialog"
-                      src="https://avatars0.githubusercontent.com/u/9064066?v=4&s=460"
+                      src="@/assets/images/avatar_default.png"
                     >
                       <v-expand-transition>
                         <div

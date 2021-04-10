@@ -10,24 +10,20 @@
               :items="loginHistory.loginHistory"
               class="elevation-1"
             >
-            <template v-slot:item="{ item }">
+              <template v-slot:item="{ item }">
                 <tr>
-                     <td class="text-xs-right">{{ item.appName }}</td>
-                <td class="text-xs-right">
+                  <td class="text-xs-right">{{ item.appName }}</td>
+                  <td class="text-xs-right">
                     <a :href="item.url" target="_blank">{{ item.url }}</a>
-                    </td>
-                <td class="text-xs-right">{{ dateConvert(item.loginDate) }}</td>
-                <td class="text-xs-right">{{ dateConvert(item.logoutDate) }}</td>
+                  </td>
+                  <td class="text-xs-right">
+                    {{ dateConvert(item.loginDate) }}
+                  </td>
+                  <td class="text-xs-right">
+                    {{ dateConvert(item.logoutDate) }}
+                  </td>
                 </tr>
-               
               </template>
-              
-              <!-- <template v-slot:items="props">
-                <td class="text-xs-right">{{ props.item.appName }}</td>
-                <td class="text-xs-right">{{ props.item.url }}</td>
-                <td class="text-xs-right">{{ props.item.loginDate }}</td>
-                <td class="text-xs-right">{{ props.item.logoutDate }}</td>
-              </template> -->
             </v-data-table>
           </v-card>
         </v-col>
@@ -37,8 +33,6 @@
 </template>
 
 <script>
-// import { requiredRule } from "../../rules/index";
-// import { nationalCodeRule } from "../../rules/index";
 export default {
   name: "LoginHistory",
   data: () => ({
@@ -74,7 +68,7 @@ export default {
     },
   },
   methods: {
-          dateConvert(newdate) {
+    dateConvert(newdate) {
       let rowDate = new Date(newdate * 1000);
       let year = rowDate.getFullYear();
       let month = rowDate.getMonth() + 1;
