@@ -12,6 +12,8 @@ module.exports = {
     '@coreui/vue',
     'vuetify'
   ],
-
+  devServer: {
+    host: 'myaccount.idall.pro',
+  }
 }
 
