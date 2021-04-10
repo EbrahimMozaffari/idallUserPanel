@@ -1,10 +1,5 @@
 <template>
   <div>
-    <div>
-      <!-- <h3 v-for="(value, name, index) in sortByCategory" :key="index">
-        {{ name }}
-      </h3> -->
-    </div>
     <v-tabs v-if="sortByCategory" v-model="tab" align-with-title>
       <v-tabs-slider color="yellow"></v-tabs-slider>
 
@@ -40,8 +35,6 @@
 </template>
 
 <script>
-// import { requiredRule } from "../../rules/index";
-// import { nationalCodeRule } from "../../rules/index";
 export default {
   name: "Documents",
   data: () => ({
@@ -79,23 +72,12 @@ export default {
   },
   computed: {
     sortByCategory() {
-      //const groupByBrand = groupBy('brand');
+     
       return this.$store.state.documents.sortByCategory;
     },
   },
   methods: {
-    // category() {
-    //   let redCars = cars.filter((car) => car.color === "red");
-    //   console.log(redCars);
-    // },
-    //   groupBy = key => array =>
-    // array.reduce(
-    //   (objectsByKeyValue, obj) => ({
-    //     ...objectsByKeyValue,
-    //     [obj[key]]: (objectsByKeyValue[obj[key]] || []).concat(obj)
-    //   }),
-    //   {}
-    // ),
+    
   },
 };
 </script>

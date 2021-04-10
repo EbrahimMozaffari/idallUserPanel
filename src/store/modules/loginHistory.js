@@ -4,10 +4,9 @@ export const state = {
   loginHistory: null,
 };
 export const getters = {
-    GetLoginHistory(state) {
-        console.log('getters caled')
-        return state.loginHistory;
-      },
+  GetLoginHistory(state) {
+    return state.loginHistory;
+  },
 };
 export const mutations = {
   SET_LOGINHISTORY(state, payload) {
@@ -17,20 +16,12 @@ export const mutations = {
 
 export const actions = {
   async fetchLoginHistory({ commit }) {
-      try {
-          const {data} = await axios.get("https://userpanelmock.idall.pro/users");
-          
-         commit("SET_LOGINHISTORY", data.users[0]);
-        // await console.log(data.users[0],"action"); 
-        //  return data.users[0];  
-      } catch (error) {
-          console.log(error);
-      }
-         
-           },
+    try {
+      const { data } = await axios.get("https://userpanelmock.idall.pro/users");
 
-           
- 
-
- 
+      commit("SET_LOGINHISTORY", data.users[0]);
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };

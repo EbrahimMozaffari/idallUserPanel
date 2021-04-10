@@ -12,9 +12,8 @@ module.exports = {
     '@coreui/vue',
     'vuetify'
   ],
- publicPath: process.env.NODE_ENV === 'production'
-      ? '/idallUserPanel/'
-      : '/'
-  
+  devServer: {
+    host: 'myaccount.idall.pro',
+  }
 }
 

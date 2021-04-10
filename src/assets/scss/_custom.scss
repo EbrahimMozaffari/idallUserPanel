@@ -1,21 +1,32 @@
 // Here you can add other styles
-$font_path: '~@/assets/fonts/';
+$font_path: "~@/assets/fonts/";
 @font-face {
-    font-family: IRANSansWeb-FaNum-Bold;
-    src: url($font_path+'IRANSansWeb-FaNum-Bold.ttf') format("truetype"),
+  font-family: IRANSansWeb-FaNum-Bold;
+  src: url($font_path+"IRANSansWeb-FaNum-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: IRANSansWeb-FaNum-Light;
+  src: url($font_path+"IRANSansWeb-FaNum-Light.ttf") format("truetype");
+}
 
-  }
-  @font-face {
-    font-family: IRANSansWeb-FaNum-Light;
-    src: url($font_path+'IRANSansWeb-FaNum-Light.ttf') format("truetype"),
-
-  }
-  .iranSansBold,.c-sidebar-nav-link,.v-breadcrumbs,.v-tab,.v-data-table-header,.v-data-footer{
-      font-family: IRANSansWeb-FaNum-Bold;
-  }
-  .iranSansLight,.v-label,.v-btn__content,.v-input__slot input,.v-data-table__wrapper tbody td{
-      font-family: IRANSansWeb-FaNum-Light;
-  }
+.iranSansLight,
+.v-label,
+.v-btn__content,
+.v-input__slot input,
+.v-data-table__wrapper tbody td,
+.v-file-input__text--placeholder
+ {
+  font-family: IRANSansWeb-FaNum-Light;
+}
+.iranSansBold,
+.c-sidebar-nav-link,
+.v-breadcrumbs,
+.v-tab,
+.v-data-table-header,
+.v-data-footer,
+.v-btn__content {
+  font-family: IRANSansWeb-FaNum-Bold !important;
+}
 
 //   @font-face {
 //       font-family: IRANSansWeb-FaNum-Light;

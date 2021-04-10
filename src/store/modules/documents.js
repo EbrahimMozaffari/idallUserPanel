@@ -6,7 +6,6 @@ export const state = {
 };
 export const getters = {
   GetDocuments(state) {
-    console.log("getters caled documents");
     return state.documents;
   },
   GetSortByCategory(state) {
@@ -31,19 +30,7 @@ export const actions = {
       commit("SET_DOCUMENTS", data.users[0]);
       commit("SET_SORTBYCATEGORY", data.users[0].documents);
 
-      // var grouped = _.mapValues(_.groupBy(data.users[0].documents, "make"), (clist) =>
-      //   clist.map((car) => _.omit(car, "make"))
-      // );
-      // console.log(grouped);
-      // let cars = data.users[0].documents;
-      // let group = cars.reduce((r, a) => {
-      //   console.log("a", a);
-      //   console.log('r', r);
-      //   r[a.make] = [...r[a.make] || [], a];
-      //   return r;
-      //  }, {});
-      //  console.log("group", group);
-
+ 
       const groupBy = (array, key) => {
         // Return the end result
         return array.reduce((result, currentValue) => {
@@ -57,13 +44,12 @@ export const actions = {
       };
       
       // Group by color as key to the person array
-      const personGroupedByColor = groupBy(data.users[0].documents, 'category');
+      const personGroupedByCategory = groupBy(data.users[0].documents, 'category');
 
-      console.log(personGroupedByColor);
-      commit("SET_SORTBYCATEGORY", personGroupedByColor);
+      //console.log(personGroupedByColor);
+      commit("SET_SORTBYCATEGORY", personGroupedByCategory);
       
-      // await console.log(data.users[0],"action");
-      //  return data.users[0];
+
     } catch (error) {
       console.log(error);
     }

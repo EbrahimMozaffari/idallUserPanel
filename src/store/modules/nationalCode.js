@@ -4,10 +4,9 @@ export const state = {
   nationalCode: null,
 };
 export const getters = {
-    GetUserNationalCode(state) {
-        console.log('getters caled')
-        return state.userInfo;
-      },
+  GetUserNationalCode(state) {
+    return state.userInfo;
+  },
 };
 export const mutations = {
   SET_NATIONALCODE(state, payload) {
@@ -17,20 +16,12 @@ export const mutations = {
 
 export const actions = {
   async fetchNationalCode({ commit }) {
-      try {
-          const {data} = await axios.get("https://userpanelmock.idall.pro/users");
-          
-         commit("SET_NATIONALCODE", data.users[0]);
-        //  await console.log(data.users[0],"action"); 
-        //  return data.users[0];  
-      } catch (error) {
-          console.log(error);
-      }
-         
-           },
+    try {
+      const { data } = await axios.get("https://userpanelmock.idall.pro/users");
 
-           
- 
-
- 
+      commit("SET_NATIONALCODE", data.users[0]);
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };
