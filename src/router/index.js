@@ -8,11 +8,10 @@ import mainAuth from '../plugins/auth';
 const TheContainer = () => import("@/containers/TheContainer");
 
 
-
 // Views - Pages
 const Page404 = () => import("@/views/error/Page404");
 const Page500 = () => import("@/views/error/Page500");
- const Login = () => import("@/views/login/Login");
+const Login = () => import("@/views/login/Login");
 // const Register = () => import("@/views/pages/Register");
 
 
@@ -29,133 +28,108 @@ const Dashboard = () => import("@/views/panel/Dashboard");
 Vue.use(Router);
 
 const router = new Router({
-  mode: "history", 
-  linkActiveClass: "active",
-  scrollBehavior: () => ({ y: 0 }),
-  routes: configRoutes(),
+    mode: "history",
+    linkActiveClass: "active",
+    scrollBehavior: () => ({y: 0}),
+    routes: configRoutes(),
 });
-router.beforeResolve((to, from, next) => {
-  // if(!mainAuth.isAuthenticated && to.name !== 'Login'){
-  //   next({ name: 'Login' });
-  //   //console.log(to);
-  //   console.log("is Not Login");
-  // }else if(mainAuth.isAuthenticated && to.name === 'Login'){
-  //   next({ name: 'Home' });
-  // }
 
-  console.log("before resolve");
-  store.dispatch("app/setOverlay", true);
-  next();
+router.beforeResolve((to, from, next) => {
+    store.dispatch("app/setOverlay", true);
+    next();
 });
 
 router.afterEach((to, from) => {
-  console.log("afterEach ");
-  setTimeout(() => {
-    store.dispatch("app/setOverlay", false);
-  }, 3000);
+    setTimeout(() => {
+        store.dispatch("app/setOverlay", false);
+    }, 3000);
 });
 
-
 mainAuth.useRouter(router);
-
 
 export default router;
 
 function configRoutes() {
-  return [
-    {
-      path: "/",
-      name: "Home",
-     // component: Login,
-      beforeEnter: (to, from, next) => {
-        if(mainAuth.isAuthenticated){
-          return next({name:'Panel'})
-        }else{
-          return next({name:'Login'})
-        }
-       
-      }
-     
-    },
-    {
-      path: "/login",
-      name: "Login",
-      component: Login,
-      beforeEnter: (to, from, next) => {
-        if(mainAuth.isAuthenticated){
-          return next({name:'Panel'})
-        }
-        return next();
-      }
-     
-    },
-    {
-      path: "/panel",
-      redirect: "/panel/dashboard",
-      name: "Panel",
-      component: TheContainer,
-      meta: {
-        authName: mainAuth.authName
-    },
-      children: [
+    return [
         {
-          path: "dashboard",
-          name: "Dashboard",
-          component: Dashboard,
+            path: "/",
+            name: "Home",
+            beforeEnter: (to, from, next) => {
+                mainAuth.isAuthenticated ? next({name: 'Panel'}) : next({name: 'Login'})
+            }
+        },
+        {
+            path: "/login",
+            name: "Login",
+            component: Login,
+            beforeEnter: (to, from, next) => {
+                mainAuth.isAuthenticated ? next({name: 'Panel'}) : next()
+            }
+        },
+        {
+            path: "/panel",
+            redirect: "/panel/dashboard",
+            name: "Panel",
+            component: TheContainer,
+            meta: {
+                authName: mainAuth.authName
+            },
+            children: [
+                {
+                    path: "dashboard",
+                    name: "Dashboard",
+                    component: Dashboard,
 
+                },
+                {
+                    path: "personInfo",
+                    name: "PersonInfo",
+                    component: PersonInfo,
+                },
+                {
+                    path: "verifyNationalCode",
+                    name: "VerifyNationalCode",
+                    component: VerifyNationalCode,
+                },
+                {
+                    path: "documents",
+                    name: "Documents",
+                    component: Documents,
+                },
+                {
+                    path: "activeLogins",
+                    name: "ActiveLogins",
+                    component: ActiveLogins,
+                },
+                {
+                    path: "loginHistory",
+                    name: "LoginHistory",
+                    component: LoginHistory,
+                },
+
+            ],
         },
         {
-          path: "personInfo",
-          name: "PersonInfo",
-          component: PersonInfo,
-        //   meta: {
-        //     authName: mainAuth.authName
-        // },
+            path: "/error",
+            redirect: "/error/404",
+            name: "Error",
+            component: {
+                render(c) {
+                    return c("router-view");
+                },
+            },
+            children: [
+                {
+                    path: "404",
+                    name: "Page404",
+                    component: Page404,
+                },
+                {
+                    path: "500",
+                    name: "Page500",
+                    component: Page500,
+                },
+            ],
         },
-        {
-          path: "verifyNationalCode",
-          name: "VerifyNationalCode",
-          component: VerifyNationalCode,
-        },
-        {
-          path: "documents",
-          name: "Documents",
-          component: Documents,
-        },
-        {
-          path: "activeLogins",
-          name: "ActiveLogins",
-          component: ActiveLogins,
-        },
-        {
-          path: "loginHistory",
-          name: "LoginHistory",
-          component: LoginHistory,
-        },
-       
-      ],
-    },
-    {
-      path: "/error",
-      redirect: "/error/404",
-      name: "Error",
-      component: {
-        render(c) {
-          return c("router-view");
-        },
-      },
-      children: [
-        {
-          path: "404",
-          name: "Page404",
-          component: Page404,
-        },
-        {
-          path: "500",
-          name: "Page500",
-          component: Page500,
-        },
-      ],
-    },
-  ];
+    ];
 }
