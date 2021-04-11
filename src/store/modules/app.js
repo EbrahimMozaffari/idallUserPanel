@@ -42,7 +42,7 @@ export const actions = {
     commit("SET_BREAD_CRUMBS",payload);
   },
   setOverlay({ commit,state }, payload) {
-    console.log('overlay',payload)
+    //console.log('overlay',payload)
     commit("SET_OVERLAY",payload);
 
     

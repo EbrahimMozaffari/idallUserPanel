@@ -4,7 +4,6 @@ import store from "../store/index";
 import mainAuth from '../plugins/auth';
 
 axios.interceptors.request.use((config)=>{
-  console.log('axios request');
   config.headers['Authorization'] = `Bearer ${mainAuth.accessToken}`;
   store.dispatch("app/setOverlay",true);
   return config;

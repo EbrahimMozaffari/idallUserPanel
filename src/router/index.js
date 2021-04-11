@@ -43,13 +43,13 @@ router.beforeResolve((to, from, next) => {
   //   next({ name: 'Home' });
   // }
 
-  console.log("before resolve");
+  
   store.dispatch("app/setOverlay", true);
   next();
 });
 
 router.afterEach((to, from) => {
-  console.log("afterEach ");
+  
   setTimeout(() => {
     store.dispatch("app/setOverlay", false);
   }, 3000);
@@ -157,5 +157,10 @@ function configRoutes() {
         },
       ],
     },
+    {
+      path: "*",
+      redirect: "/error/404",
+
+    }
   ];
 }

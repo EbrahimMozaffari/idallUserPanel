@@ -5,10 +5,14 @@
         <CCol md="8">
           <CCardGroup>
             <CCard class="p-4">
-              <CCardBody>
-                
-               <v-btn class="success iranSansBold mx-auto" @click="$oidc.signIn()">اتصال به آیدال</v-btn >
-               <router-link to="/home"></router-link>
+              <CCardBody  class="d-flex align-center">
+                <v-btn
+                  align="center"
+                  justify="center"
+                  class="success iranSansBold mx-auto"
+                  @click="$oidc.signIn()"
+                  >اتصال به آیدال</v-btn
+                >
               </CCardBody>
             </CCard>
             <CCard
@@ -19,8 +23,10 @@
             >
               <CCardBody>
                 <h2 class="iranSansBold">لورم ایپسوم</h2>
-                <p class="iranSansLight">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
-                  با استفاده از طراحان گرافیک است، چاپگرها</p>
+                <p class="iranSansLight">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
+                  با استفاده از طراحان گرافیک است، چاپگرها
+                </p>
               </CCardBody>
             </CCard>
           </CCardGroup>
@@ -32,6 +38,6 @@
 
 <script>
 export default {
-  name: 'Login'
-}
+  name: "Login",
+};
 </script>
