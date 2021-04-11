@@ -6,7 +6,7 @@ export default [
         _name: 'CSidebarNavItem',
         name: 'خانه',
         to: '/panel/dashboard',
-        icon: 'cil-speedometer',
+        icon: 'cil-home',
 
       },
       {
