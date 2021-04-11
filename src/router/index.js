@@ -2,18 +2,16 @@ import Vue from "vue";
 import Router from "vue-router";
 import store from "../store/index";
 
-import mainAuth from '../plugins/auth';
+import mainAuth from "../plugins/auth";
 
 // Containers
 const TheContainer = () => import("@/containers/TheContainer");
-
 
 // Views - Pages
 const Page404 = () => import("@/views/error/Page404");
 const Page500 = () => import("@/views/error/Page500");
 const Login = () => import("@/views/login/Login");
 // const Register = () => import("@/views/pages/Register");
-
 
 //panel Route
 const PersonInfo = () => import("@/views/panel/PersonInfo");
@@ -28,42 +26,21 @@ const Dashboard = () => import("@/views/panel/Dashboard");
 Vue.use(Router);
 
 const router = new Router({
-    mode: "history",
-    linkActiveClass: "active",
-    scrollBehavior: () => ({y: 0}),
-    routes: configRoutes(),
+  mode: "history",
+  linkActiveClass: "active",
+  scrollBehavior: () => ({ y: 0 }),
+  routes: configRoutes(),
 });
 
 router.beforeResolve((to, from, next) => {
-<<<<<<< HEAD
-  // if(!mainAuth.isAuthenticated && to.name !== 'Login'){
-  //   next({ name: 'Login' });
-  //   //console.log(to);
-  //   console.log("is Not Login");
-  // }else if(mainAuth.isAuthenticated && to.name === 'Login'){
-  //   next({ name: 'Home' });
-  // }
-
-  
   store.dispatch("app/setOverlay", true);
   next();
 });
 
 router.afterEach((to, from) => {
-  
   setTimeout(() => {
     store.dispatch("app/setOverlay", false);
   }, 3000);
-=======
-    store.dispatch("app/setOverlay", true);
-    next();
-});
-
-router.afterEach((to, from) => {
-    setTimeout(() => {
-        store.dispatch("app/setOverlay", false);
-    }, 3000);
->>>>>>> f7b54d9f27fce5fd2873c4a6c9ae0d2e7a59feca
 });
 
 mainAuth.useRouter(router);
@@ -71,97 +48,87 @@ mainAuth.useRouter(router);
 export default router;
 
 function configRoutes() {
-    return [
+  return [
+    {
+      path: "/",
+      name: "Home",
+      beforeEnter: (to, from, next) => {
+        mainAuth.isAuthenticated
+          ? next({ name: "Panel" })
+          : next({ name: "Login" });
+      },
+    },
+    {
+      path: "/login",
+      name: "Login",
+      component: Login,
+      beforeEnter: (to, from, next) => {
+        mainAuth.isAuthenticated ? next({ name: "Panel" }) : next();
+      },
+    },
+    {
+      path: "/panel",
+      redirect: "/panel/dashboard",
+      name: "Panel",
+      component: TheContainer,
+      meta: {
+        authName: mainAuth.authName,
+      },
+      children: [
         {
-            path: "/",
-            name: "Home",
-            beforeEnter: (to, from, next) => {
-                mainAuth.isAuthenticated ? next({name: 'Panel'}) : next({name: 'Login'})
-            }
+          path: "dashboard",
+          name: "Dashboard",
+          component: Dashboard,
         },
         {
-            path: "/login",
-            name: "Login",
-            component: Login,
-            beforeEnter: (to, from, next) => {
-                mainAuth.isAuthenticated ? next({name: 'Panel'}) : next()
-            }
+          path: "personInfo",
+          name: "PersonInfo",
+          component: PersonInfo,
         },
         {
-            path: "/panel",
-            redirect: "/panel/dashboard",
-            name: "Panel",
-            component: TheContainer,
-            meta: {
-                authName: mainAuth.authName
-            },
-            children: [
-                {
-                    path: "dashboard",
-                    name: "Dashboard",
-                    component: Dashboard,
-
-                },
-                {
-                    path: "personInfo",
-                    name: "PersonInfo",
-                    component: PersonInfo,
-                },
-                {
-                    path: "verifyNationalCode",
-                    name: "VerifyNationalCode",
-                    component: VerifyNationalCode,
-                },
-                {
-                    path: "documents",
-                    name: "Documents",
-                    component: Documents,
-                },
-                {
-                    path: "activeLogins",
-                    name: "ActiveLogins",
-                    component: ActiveLogins,
-                },
-                {
-                    path: "loginHistory",
-                    name: "LoginHistory",
-                    component: LoginHistory,
-                },
-
-            ],
+          path: "verifyNationalCode",
+          name: "VerifyNationalCode",
+          component: VerifyNationalCode,
         },
         {
-            path: "/error",
-            redirect: "/error/404",
-            name: "Error",
-            component: {
-                render(c) {
-                    return c("router-view");
-                },
-            },
-            children: [
-                {
-                    path: "404",
-                    name: "Page404",
-                    component: Page404,
-                },
-                {
-                    path: "500",
-                    name: "Page500",
-                    component: Page500,
-                },
-            ],
+          path: "documents",
+          name: "Documents",
+          component: Documents,
         },
-<<<<<<< HEAD
+        {
+          path: "activeLogins",
+          name: "ActiveLogins",
+          component: ActiveLogins,
+        },
+        {
+          path: "loginHistory",
+          name: "LoginHistory",
+          component: LoginHistory,
+        },
       ],
     },
     {
-      path: "*",
+      path: "/error",
       redirect: "/error/404",
-
-    }
+      name: "Error",
+      component: {
+        render(c) {
+          return c("router-view");
+        },
+      },
+      children: [
+        {
+          path: "404",
+          name: "Page404",
+          component: Page404,
+        },
+        {
+          path: "500",
+          name: "Page500",
+          component: Page500,
+        },
+      ],
+    },
+    { path: "*", redirect: "/error/404" },
   ];
-=======
-    ];
->>>>>>> f7b54d9f27fce5fd2873c4a6c9ae0d2e7a59feca
 }
