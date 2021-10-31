@@ -9,9 +9,9 @@ var mainOidc = createOidcAuth("main", SignInType.Window, appRootUrl, {
   authority: 'https://accounts.idall.pro',
   client_id: 'idall-user-panel',
   response_type: 'code',
-  scope: 'openid profile phone jp_api.user',
+  scope: 'openid profile phone',
   post_logout_redirect_uri: `${appRootUrl}logout`,
-  //redirect_uri:"https://my.accounts.idall.pros/auth/signinwin/main",
+  //redirect_uri:"https://my.accounts.idall.pro/auth/signinwin/main",
   loadUserInfo: true,
 });
 Vue.prototype.$oidc = mainOidc;

@@ -14,6 +14,9 @@ module.exports = {
   ],
   devServer: {
     host: 'myaccount.idall.pro',
+    port:443,
+    https:true,
+    disableHostCheck:true
   }
 }
 
